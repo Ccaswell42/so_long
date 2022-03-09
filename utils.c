@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccaswell <ccaswell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/20 14:20:58 by ccaswell          #+#    #+#             */
-/*   Updated: 2022/03/09 14:15:43 by ccaswell         ###   ########.fr       */
+/*   Created: 2022/03/09 14:47:07 by ccaswell          #+#    #+#             */
+/*   Updated: 2022/03/09 18:06:56 by ccaswell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "so_long.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_error(void)
 {
-	int			i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
-	}
-	if (s[i] == (char)c)
-		return ((char *)&s[i]);
-	return (0);
+	write(2, "Error\n", 6);
+	exit(1);
 }
