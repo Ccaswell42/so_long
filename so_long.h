@@ -6,7 +6,7 @@
 /*   By: ccaswell <ccaswell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 15:46:20 by ccaswell          #+#    #+#             */
-/*   Updated: 2022/03/09 18:18:13 by ccaswell         ###   ########.fr       */
+/*   Updated: 2022/03/11 13:40:59 by ccaswell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,22 @@ typedef struct s_mapa
 	char **map_data;
 }	t_mapa;
 
+typedef struct s_texture
+{
+	void	*collect;
+	void	*free;
+	void	*wals;
+	void	*zombu;
+	void 	*exit;
+}	t_texture;
+
+typedef struct s_render
+{
+	void	*mlx;
+	void	*win;
+	
+}	t_render;
+
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
@@ -47,6 +63,9 @@ void valid_name(char *s);
 void valid_wall(t_mapa *mapa_main);
 void valid_wall2(t_mapa *mapa_main);
 void all_validation(char *str, t_mapa *map_main);
+t_render *init_render(t_mapa *mapa_main);
+t_texture *testures(t_render *tmp);
+void otrisovochka(t_mapa *mapa_main , t_render *tmp, t_texture *imgs);
 
 
 

@@ -1,7 +1,7 @@
 HEAD = so_long.h 
 NAME = so_long
 LIBFT = libft/libft.a
-FLAGS = -Wall -Wextra -Werror -Imlx
+FLAGS = -Wall -Wextra -Werror -Imlx 
 
 SRCS = gnl_main.c get_next_line.c utils.c valid_map.c valid_map_2.c
 OBJS = $(SRCS:.c=.o)
