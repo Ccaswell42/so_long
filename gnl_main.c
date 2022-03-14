@@ -129,6 +129,10 @@ int main(int argc, char **argv)
 	t_render *tmp = init_render(map_main);
 	t_texture *imgs = testures(tmp);
 	otrisovochka(map_main, tmp, imgs);
+	t_data *data;
+	data = init_data(map_main, tmp, imgs);
+	mlx_hook(tmp->win, 17, 0, exit_hook, data);
+	mlx_hook(tmp->win, 2, 0, key_hook, data);
 	mlx_loop(tmp->mlx);
 	
 

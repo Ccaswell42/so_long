@@ -48,6 +48,14 @@ typedef struct s_render
 	
 }	t_render;
 
+typedef struct s_data
+{
+	t_render *r;
+	t_texture *t;
+	t_mapa *m;
+	
+}	t_data;
+
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
@@ -66,6 +74,11 @@ void all_validation(char *str, t_mapa *map_main);
 t_render *init_render(t_mapa *mapa_main);
 t_texture *testures(t_render *tmp);
 void otrisovochka(t_mapa *mapa_main , t_render *tmp, t_texture *imgs);
+int exit_hook(void);
+int press_Z(t_mapa *main_mapa); //////
+int key_hook(int key_code, t_data *data);
+t_data *init_data(t_mapa *m, t_render *r, t_texture *t);
+
 
 
 
