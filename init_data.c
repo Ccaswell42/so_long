@@ -9,5 +9,6 @@ t_data *init_data(t_mapa *m, t_render *r, t_texture *t)
     d->m = m;
     d->r = r;
     d->t = t;
+	d->move_number = 0;
     return (d);
 }

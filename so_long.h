@@ -6,7 +6,7 @@
 /*   By: ccaswell <ccaswell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 15:46:20 by ccaswell          #+#    #+#             */
-/*   Updated: 2022/03/11 13:40:59 by ccaswell         ###   ########.fr       */
+/*   Updated: 2022/03/15 17:31:41 by ccaswell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 
 
 # include <unistd.h>
-# include "libft/libft.h"
+# include "printf/libft/libft.h"
+# include "printf/ft_printf.h"
 # include <stdio.h> 
 # include <mlx.h>
 # include <fcntl.h>
@@ -30,6 +31,8 @@ typedef struct s_mapa
 	int collect;
 	int current_collect;
 	char **map_data;
+	int column_p;
+	int line_p;
 }	t_mapa;
 
 typedef struct s_texture
@@ -53,6 +56,7 @@ typedef struct s_data
 	t_render *r;
 	t_texture *t;
 	t_mapa *m;
+	int move_number;
 	
 }	t_data;
 
@@ -75,9 +79,11 @@ t_render *init_render(t_mapa *mapa_main);
 t_texture *testures(t_render *tmp);
 void otrisovochka(t_mapa *mapa_main , t_render *tmp, t_texture *imgs);
 int exit_hook(void);
-int press_Z(t_mapa *main_mapa); //////
 int key_hook(int key_code, t_data *data);
 t_data *init_data(t_mapa *m, t_render *r, t_texture *t);
+int game_win_hook( t_data *data);
+int game_win_hook3(int c, t_data *data);
+void e_otrisovka(t_mapa *mapa_main , t_render *tmp, t_texture *imgs);
 
 
 

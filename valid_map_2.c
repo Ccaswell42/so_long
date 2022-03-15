@@ -6,7 +6,7 @@
 /*   By: ccaswell <ccaswell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 18:15:25 by ccaswell          #+#    #+#             */
-/*   Updated: 2022/03/09 18:18:38 by ccaswell         ###   ########.fr       */
+/*   Updated: 2022/03/15 17:08:19 by ccaswell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,30 @@ void valid_wall2(t_mapa *mapa_main)
 	}
 }
 
+void find_player(t_mapa *mapa_main)
+{
+	char	**map;
+	int		i;
+	int		j;
+	
+	map = mapa_main->map_data;
+	j = 0;
+	while (j < (mapa_main->height))
+	{
+		i = 0;
+		while (map[j][i])
+		{
+			if ((map[j][i]) == 'P')
+			{
+				mapa_main->column_p = j;
+				mapa_main->line_p = i;
+			}
+			i++;
+		}
+		j++;
+	}
+}
+
 void all_validation(char *str, t_mapa *map_main)
 {
 	valid_name(str);
@@ -64,4 +88,5 @@ void all_validation(char *str, t_mapa *map_main)
 	components(map_main, 0, 0);
 	other_characters(map_main);
 	valid_wall(map_main);
+	find_player(map_main);
 }

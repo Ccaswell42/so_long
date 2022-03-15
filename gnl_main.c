@@ -6,7 +6,7 @@
 /*   By: ccaswell <ccaswell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:12:45 by ccaswell          #+#    #+#             */
-/*   Updated: 2022/03/11 14:06:15 by ccaswell         ###   ########.fr       */
+/*   Updated: 2022/03/15 17:45:44 by ccaswell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,9 +132,11 @@ int main(int argc, char **argv)
 	t_data *data;
 	data = init_data(map_main, tmp, imgs);
 	mlx_hook(tmp->win, 17, 0, exit_hook, data);
-	mlx_hook(tmp->win, 2, 0, key_hook, data);
+	mlx_loop_hook(tmp->mlx,game_win_hook, data); // хук конца игры
+	mlx_key_hook(tmp->win, key_hook, data);
 	mlx_loop(tmp->mlx);
 	
+
 
 	exit (0);
 }

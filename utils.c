@@ -6,7 +6,7 @@
 /*   By: ccaswell <ccaswell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:47:07 by ccaswell          #+#    #+#             */
-/*   Updated: 2022/03/11 14:35:01 by ccaswell         ###   ########.fr       */
+/*   Updated: 2022/03/15 13:40:15 by ccaswell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,5 @@ void otrisovochka(t_mapa *mapa_main , t_render *tmp, t_texture *imgs)
 		j++;
 		x += 32;
 		
-	}
-	
+	}	
 }
